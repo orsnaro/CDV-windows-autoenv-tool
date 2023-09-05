@@ -1,0 +1,14 @@
+;aiu;
+
+[autoenv-tool]
+Name = autoenv-tool latest
+URL = http://www.myeditor.com/download/myeditor.msi
+Size = 9490
+Description = This is the latest version of MyEditor
+Feature = Support for other file types
+Feature1 = Support for different encodings
+BugFix = Fix bug with file open
+BugFix1 = Fix crash when opening large files
+BugFix2 = Fix bug with search in file feature
+FilePath = %ProgramFiles%\cdv\cdv.bat
+Version =latest
