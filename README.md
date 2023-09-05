@@ -1,5 +1,5 @@
 # windows-autoenv-tool
-This batch scripted tool will auto activate your python virtual environment just by using `cdv` command just like `cd` for more help use `cdv -h`
+This batch scripted tool will auto activate your python virtual environment just by using `cdv`. Works  command like normal `cd`. for more help use `cdv -h`
 
 <br>
 
