@@ -56,7 +56,7 @@ This batch scripted tool will auto activate your python virtual environment just
 
 
 > # Notes📝:
- * #### no need to download the [installer](https://github.com/orsnaro/windows-autoenv-tool/releases/latest) for every new version _( just reinstall and it will update to latest release )_
+ * #### _(in testing)_ no need to download the [installer](https://github.com/orsnaro/windows-autoenv-tool/releases/latest) for every new version _( just reinstall and it will update to latest release )_
  * #### if `<optional-path>` parameter wasn't provided will just run `cdv` command on current directory
 * #### the folder which holds all venvs is defaulted to `C:\Users\%USERNAME%\py_envs`
 * #### virtual environment directoroy names will be same as project name with `_env` appended to it
