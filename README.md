@@ -1,5 +1,5 @@
 # windows-autoenv-tool
-This batch scripted tool will auto activate your python virtual environment just by using `cvd` command just like `cd` for more help use `cvd -h`
+This batch scripted tool will auto activate your python virtual environment just by using `cdv` command just like `cd` for more help use `cdv -h`
 
 # its very easy! just install and use ( or clone and add path to system path environmental virable and you're ready to go! )
 
@@ -41,4 +41,4 @@ This batch scripted tool will auto activate your python virtual environment just
 *  #### command auto ignores it's `.is_autoVenv` file in `.gitignore`. _(this is only if the project is in a git repository folder)_
 
 ---
- ##  _for more and to edit to your custom configs I recommend reading the batch script itself and raise any issues💙_
+ ##  _for more and config your custom auto venv I recommend reading the batch script itself and raise any issues💙_
