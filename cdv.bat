@@ -3,6 +3,11 @@ SETLOCAL EnableDelayedExpansion ENABLEEXTENSIONS
 
 REM ~ABOUT THE COMMAND~
 
+rem version : V0.1.1
+rem Date    : 5-9-2023
+rem made by : orsnaro - Omar Rashad
+rem system  : win10 - cmd 
+
 rem this 'cdv' command soft modifies 'cd' command by doing this: (DONT USE FOLDER NAMES OR PATHS WITH SPACES!)
 
 
@@ -61,6 +66,12 @@ if "!toggleVenv!"=="-h" (
 	echo [93m [93m==============================================================================[0m
 	echo [93m =                    [96m      ~ABOUT THE "CDV" COMMAND~                         [93m= [0m
 	echo [93m [93m==============================================================================[0m	
+	echo [93m version : V0.1.1
+	echo [93m Date    : 5-9-2023
+	echo [93m made by : orsnaro - Omar Rashad
+	echo [93m system  : win10 - cmd 
+	echo.
+	echo.
 	echo [93m "this 'cdv' command soft modifies 'cd' command by doing this:"
 	echo.
 	echo [96m 0. [0m "To get `cdv` command help [THIS]  use `cdv -h`"
@@ -86,11 +97,11 @@ if "!toggleVenv!"=="-h" (
 	echo.
 	echo.
 	echo [91m ~
-	echo [91m IMPORTANT: [0m "(DONT USE FOLDER NAMES OR PATHS WITH SPACES!)"
+	echo [93m IMPORTANT: [0m "(DONT USE FOLDER NAMES OR PATHS WITH SPACES!)"
 	echo.
 	echo [0m "the command mostly used inside aliases of cd to repoes ( other wise make its default to disable extra modification and do normal cd unless ^%2 is set to "1")"
 	echo.
-	echo [91m "[works/tested on windows10 OS. can be used like this: `cdv path_arg <toggle_venv_arg>`]"
+	echo [93m "[works/tested on windows10 OS. can be used like this: `cdv path_arg <toggle_venv_arg>`]"[0m
 	echo [91m ~ [0m
 	
 	ENDLOCAL
