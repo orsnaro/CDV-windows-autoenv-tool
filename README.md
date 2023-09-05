@@ -4,7 +4,7 @@ This batch scripted tool will auto activate your python virtual environment just
 <br>
 
 > # New Release _V0.1_ ✨
-### Install , open terminal and use!  [_Here to download_](https://github.com/orsnaro/windows-autoenv-tool/releases/tag/V0.1)
+### Install , open terminal and use!  [_Here to download v0.1_](https://github.com/orsnaro/windows-autoenv-tool/releases/tag/V0.1)
 
 
 
@@ -12,6 +12,8 @@ This batch scripted tool will auto activate your python virtual environment just
 <br>
 
 > # How to Use🚀:
+
+* ##### Install latest version via [cdv.msi _(latest)_](https://github.com/orsnaro/windows-autoenv-tool/releases/latest)
 
 * ##### Shows help for the cdv command:
    ```batch
