@@ -3,8 +3,8 @@ This batch scripted tool will auto activate your python virtual environment just
 
 <br>
 
-> # New Release _V0.1_ ✨!
-### Install , open terminal and use!  [_Here to download v0.1_](https://github.com/orsnaro/windows-autoenv-tool/releases/tag/V0.1)
+> # New Release _V0.1.1_ ✨!
+### Install , open terminal and use!  [_Here to download v0.1.1_](https://github.com/orsnaro/windows-autoenv-tool/releases/tag/V0.1.1)
 
 
 
@@ -13,7 +13,18 @@ This batch scripted tool will auto activate your python virtual environment just
 
 > # How to Use🚀:
 
-* #### Install latest version via [cdv.msi _(latest)_](https://github.com/orsnaro/windows-autoenv-tool/releases/latest)
+* #### Install latest version via [cdv.msi <sub>(latest)</sub> ](https://github.com/orsnaro/windows-autoenv-tool/releases/latest)
+
+* #### if using [***cmder***](https://cmder.app/) console and you want to totally override `cd` by cdv ( you can re-tract the override any time )
+   ```batch
+	alias cd=cdv $*
+  ```
+   _now `cd` has all `cdv` features!_
+  
+  * to re-tract
+  ```batch
+  unalias cd
+  ```
 
 * ##### Shows help for the cdv command:
    ```batch
@@ -27,7 +38,11 @@ This batch scripted tool will auto activate your python virtual environment just
 * ##### with out any parameters its just similar to `cd` until you cdv'ed to one of your projects it will auto activate the venv for you!
    ```batch
    cdv path  
-   ```              
+   ```          
+	* to activate currentt project venv
+	```batch
+	cdv 
+	```
 
 * ##### complete delete  for the auto venv configs and files:
    ```batch

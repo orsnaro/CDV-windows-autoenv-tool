@@ -26,9 +26,6 @@ rem ~
 REM ~END ABOUT THE COMMAND~
 
 
-
-
-
 REM ~START OF THE BATCH SCRIPT~
 if "%1"=="-i" (
 	set "toCheckPath=%CD%" && set "toggleVenv=-i" 
@@ -42,7 +39,11 @@ if "%1"=="-i" (
 			if "%1"=="-h" (
 				set "toCheckPath=%CD%" && set "toggleVenv=-h"
 			) else ( 
-				set "toCheckPath=%1" && set "toggleVenv=%2" 
+				if [%1]==[] (
+					set "toCheckPath=%CD%" && set "toggleVenv=%2"
+				) else (
+					set "toCheckPath=%1" && set "toggleVenv=%2" 
+				)
 			)
 		)
 	) 
