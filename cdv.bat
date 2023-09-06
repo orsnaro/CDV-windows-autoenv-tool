@@ -14,8 +14,8 @@ rem this 'cdv' command soft modifies 'cd' command by doing this: (DONT USE FOLDE
 rem 0. To get `cdv` command help [THIS]  use `cdv -h`
 rem 1. always using /d switch of 'cd' command 
 rem 2. checks if path you cdv'ing to has '.is_autoVenv' file if not make it and add it to '.gitignore' if this dir is a git repo
-rem 3. check if there is exist python venv for it : if there is activate it , if not make the it then activate it
-rem 4. to use it easly add `cdv.bat` folder path to your path variable in system environmental variables (in release version installer will add it auto and tool path will be at C:\Users\%USERNAME%\cdv\ )
+rem 3. check if there is exist python venv for it : if there is activate it , if not make it  then activate it
+rem 4. to use it easly add `cdv.bat` folder path to your path variable in system environmental variables (in release version installer will add it auto. installing path will be at C:\Program Files (x86)\cdv\ )
 rem 5. if used `cdv -i` or `cdv <path> -i` : initialize .is_autoVenv then make new venv for current dir or provided path then activate the venv
 rem 6. all venv folrders are in: C:\Users\%USERNAME%\py_envs\
 rem 7. naming conventions for venvs is the "proj_folder_name"+"_venv"
@@ -80,9 +80,9 @@ if "!toggleVenv!"=="-h" (
 	echo.
 	echo [96m 2. [0m "checks if path you cdv'ing to has '.is_autoVenv' file if not make it and add it to '.gitignore' if this dir is a git repo"
 	echo.
-	echo [96m 3. [0m "check if there is exist python venv for it : if there is activate it , if not make the it then activate it"
+	echo [96m 3. [0m "check if there is exist python venv for it : if there is activate it , if not make it then activate it"
 	echo.
-	echo [96m 4. [0m "to use it easly add `cdv.bat` folder path to your path variable in system environmental variables (in release version installer will add it auto and tool path will be at C:\Users\USERNAME\cdv\ )"
+	echo [96m 4. [0m "to use it easly add `cdv.bat` folder path to your path variable in system environmental variables (in release version installer will add it auto. install path will be at C:\Program Files (x86)\cdv\ )"
 	echo.
 	echo [96m 5. [0m "if used `cdv -i` or `cdv <path> -i` : initialize .is_autoVenv then make new venv for current dir or provided path then activate the venv"
 	echo.
