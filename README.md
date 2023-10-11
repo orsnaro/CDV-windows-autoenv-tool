@@ -13,9 +13,9 @@ This batch scripted tool will auto activate your python virtual environment just
 
 > # How to Use🚀:
 
-* #### Install latest version via [cdv.msi <sub>(latest)</sub> ](https://github.com/orsnaro/windows-autoenv-tool/releases/latest/download/cdv.msi)
+* #### First Install latest version via [cdv.msi <sub>(latest)</sub> ](https://github.com/orsnaro/windows-autoenv-tool/releases/latest/download/cdv.msi)
 
-* #### if using [***cmder***](https://cmder.app/) console and you want to totally override `cd` by cdv ( you can re-tract the override any time )
+* #### if using [***cmder***](https://cmder.app/) console and you want to totally override `cd` by cdv _( you can re-tract the override any time )_
    ```batch
 	alias cd=cdv $*
   ```
@@ -28,18 +28,18 @@ This batch scripted tool will auto activate your python virtual environment just
 
 * ##### Shows help for the cdv command:
    ```batch
-   cdv <optional-path>  -h
+   cdv -h
    ```
-* #####  initialize new auto venv -_only used one time per project_- :
+* #####  initialize & configure new auto venv -_only used one time per project_- :
   ```batch
   cdv <optional-path>  -i
   ```
 
-* ##### with out any parameters its just similar to `cd` until you cdv'ed to one of your projects it will auto activate the venv for you!
+* ##### with out any parameters its just similar to `cd` until you cdv'ed to one of your configured projects it will auto activate the venv for you!
    ```batch
    cdv path  
    ```          
-	* to activate currentt project venv
+	* to activate current project venv
 	```batch
 	cdv 
 	```
@@ -49,7 +49,7 @@ This batch scripted tool will auto activate your python virtual environment just
    cdv <optional-path>  -d
    ```
 
-* ##### to deactivate your venv .. you can also use deactivate:
+* ##### to deactivate your venv .. you can also use `deactivate` command:
   ```batch
   cdv <optional-path>  -1
   ```
