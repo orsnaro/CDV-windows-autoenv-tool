@@ -3,8 +3,19 @@ This batch scripted tool will auto activate your python virtual environment just
 
 <br>
 
-> # New Release _V0.1.1_ ✨!
-### Install , open terminal and use!  [_Here to download v0.1.1_](https://github.com/orsnaro/windows-autoenv-tool/releases/tag/v0.1.1)
+> # New Release _V0.1.2_ ✨!
+### Install , open terminal and use it Rightaway!  [_Here to download v0.1.2_](https://github.com/orsnaro/windows-autoenv-tool/releases/tag/v0.1.2)
+<details>
+<summary> <h3>Release Notes:</h3> </summary>
+    
+  -	**Feature:** NOW `cdv`  behaves more like normal cd default behavior when using `cdv` without ANY positional  args!  
+  - **Fix** bug with dir/s that include spaces.
+  - **Fix** bug when forward slashes are used instead of backslashes in dirs path 
+  - **Fix** bug using `cdv /` that persists even after fix general forward slash bug
+  - **Debug mode** can be easily activated now: 3rd shell positional argument must be set to `-1`
+
+ </details> 
+
 
 
 

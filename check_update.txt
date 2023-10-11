@@ -2,7 +2,7 @@
 
 [autoenv-tool]
 Name = autoenv-tool latest
-URL = https://github.com/orsnaro/windows-autoenv-tool/releases/latest/download/cdv.exe
+URL = https://github.com/orsnaro/windows-autoenv-tool/releases/latest/download/cdv.msi
 Size = 9490
 Description = This is the latest version of autoenv-cdv tool
 FilePath = [ProgramFilesFolder][cdvdir]
