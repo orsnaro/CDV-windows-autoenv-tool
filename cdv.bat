@@ -229,7 +229,7 @@ if exist "!toCheckPath!" (
 	) else (
 		ENDLOCAL
 		set fstPoShellArg=%1
-		set fstPoShellArg=%fstPoShellArg:"=%
+		if [%fstPoShellArg%] NEQ [] set fstPoShellArg=%fstPoShellArg:"=%
 		@REM ENDLOCAL
 		if [%fstPoShellArg%]==[] (echo %CD%) else ( if not "%fstPoShellArg%"=="-1" ( if not "%fstPoShellArg%"=="-i" ( if not "%fstPoShellArg%"=="-d" (cd /d "%fstPoShellArg%") ) ) )
 		@REM cd works after ending localisation  so new dir in %CD% is in global scope not local
@@ -254,7 +254,7 @@ if exist "C:\Users\%USERNAME%\final_venv_active_path.txt" ( rm -f C:\Users\%USER
 
 @REM ENDLOCAL
 set fstPoShellArg=%1
-set fstPoShellArg=%fstPoShellArg:"=%
+if [%fstPoShellArg%] NEQ [] set fstPoShellArg=%fstPoShellArg:"=%
 if [%fstPoShellArg%]==[] (echo %CD%) else ( if not "%fstPoShellArg%"=="-1" ( if not "%fstPoShellArg%"=="-i" ( if not "%fstPoShellArg%"=="-d" (cd /d "%fstPoShellArg%") ) ) )
 @REM cd works after ending localisation  so new dir in %CD% is in global scope not local
 exit /b 0
