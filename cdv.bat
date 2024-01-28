@@ -103,30 +103,32 @@ if "!command_options!"=="-h" (
 	echo.
 	echo [96m 0. [0m "To get `cdv` command help [THIS]  use `cdv -h`"
 	echo.
-	echo [96m 1. [0m "always using /d switch of 'cd' command" 
+	echo [96m 1. [0m "`cdv` by default uses /d switch of 'cd' command" 
 	echo.
-	echo [96m 2. [0m "checks if path you cdv'ing to has '.is_autoVenv' file if not make it and add it to '.gitignore' if this dir is a git repo"
+	echo [96m 2. [0m "`cdv` checks if path you cdv'ing to has '.is_autoVenv' file if not. It creates it (if this DIR is a git repo it configures '.gitignore' for `cdv`)"
 	echo.
-	echo [96m 3. [0m "check if there is exist python venv for it : if there is activate it , if not make the it then activate it"
+	echo [96m 3. [0m "`cdv`checks if there is existing cdv python venv for it: if there is `cdv` activates it, if not `cdv` makes new cdv python venv then activates it"
 	echo.
-	echo [96m 4. [0m "to use it easly add `cdv.bat` folder path to your path variable in system environmental variables (in release version installer will add it auto and tool path will be at C:\Users\USERNAME\cdv\ )"
+	echo [96m 4. [0m "To use it easly add `cdv.bat` folder path to your path variable in system environmental variables (in release version installer will add it auto and cdv tool files  will be at 'C:\Users\USERNAME\cdv\' )"
 	echo.
-	echo [96m 5. [0m "if used `cdv -i` or `cdv <path> -i` : initialize .is_autoVenv then make new venv for current dir or provided path then activate the venv"
+	echo [96m 5. [0m "If used `cdv -i` or `cdv <path> -i`: initialize '.is_autoVenv' then make new venv for current DIR or provided path then activate the venv"
 	echo.
-	echo [96m 6. [0m "all venv folrders are in: C:\Users\USERNAME\py_envs\"
+	echo [96m 6. [0m "All cdv python venvs folders are by default created at: 'C:\Users\USERNAME\py_envs\'"
 	echo.
-	echo [96m 7. [0m "naming conventions for venvs is the "proj_folder_name"+"_venv"  (if proj folder name has spaces will be removed first) "
+	echo [96m 7. [0m "Naming conventions for venvs is the "proj_folder_name"+"_venv"  (if proj folder name has spaces will be removed first) "
 	echo.
-	echo [96m finally: [0m "use `cdv -d` or `cdv <path> -d` to delete the venv and all auto venv configs for this dir"
+	echo [96m finally: [0m "Use `cdv -d` or `cdv <path> -d` to delete the venv and all auto venv configs for this DIR"
 	echo.
 	echo.
-	echo [104m [TODO] [0m "refactorise code by moving related scipts to a separate goto tag i.e.(function)"
+	echo [104m [TODO] [0m "Refactorise code by moving related scripts to a separate goto tag i.e.(function)"
+	echo.
+	echo [104m [INFO] [0m "for more visit: https://github.com/orsnaro/CDV-windows-autoenv-tool "
 	echo.
 	echo.
 	echo [91m ~
-	echo [93m IMPORTANT: [0m "(DONT USE FOLDER NAMES OR PATHS WITH SPACES!)"
+	echo [93m IMPORTANT: [0m "(DON'T USE FOLDER NAMES OR PATHS HAVING WHITE CHARACTERS!)"
 	echo.
-	echo [0m "the command mostly used inside aliases of cd to repoes ( other wise make its default to disable extra modification and do normal cd unless ^%2 is set to "1")"
+	echo [0m "the command is mostly used with cd aliases to repoes ( other wise make its default is to disable extra modification and do normal cd unless ^%2 is set to "1")"
 	echo.
 	echo [93m "[works/tested on windows10 OS. can be used like this: `cdv path_arg <toggle_venv_arg>`]"[0m
 	echo [91m ~ [0m
