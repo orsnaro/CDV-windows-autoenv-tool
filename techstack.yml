@@ -1,0 +1,20 @@
+repo_name: orsnaro/CDV-windows-autoenv-tool
+report_id: 74185cf7bd7b6a62a3063c458c06ff57
+version: 0.1
+repo_type: Public
+timestamp: '2024-02-01T22:06:55+00:00'
+requested_by: orsnaro
+provider: github
+branch: main
+detected_tools_count: 1
+tools:
+- name: Git
+  description: Fast, scalable, distributed revision control system
+  website_url: http://git-scm.com/
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Version Control System
+  image_url: https://img.stackshare.io/service/1046/git.png
+  detection_source_url: https://github.com/orsnaro/CDV-windows-autoenv-tool
+  detection_source: Repo Metadata
