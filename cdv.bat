@@ -175,7 +175,7 @@ if exist "!toCheckPath!" (
 	if "!command_options!"=="-i" ( 
 		type nul > !toCheckPath!.is_autoVenv
 			@REM if it's a git repo add this file to ignored files
-		if exist "!toCheckPath!.git\" ( echo .is_autovEnv >> !toCheckPath!.gitignore )
+		if exist "!toCheckPath!.git\" ( echo .is_autoVenv >> !toCheckPath!.gitignore )
 	)
 	
 	@REM leaving the backslash at end of path will make it harder to use '~' or get dir name using other methods. so remove it!
