@@ -3,10 +3,10 @@ SETLOCAL EnableDelayedExpansion ENABLEEXTENSIONS
 
 @REM ~ABOUT THE COMMAND~
 
-@REM version : V0.1.2
-@REM Date    : 11-10-2023
+@REM version : V0.1.3
+@REM Date    : 31-1-2025
 @REM made by : orsnaro - Omar Rashad
-@REM system  : win10 - cmd 
+@REM system  : win11 - cmd 
 
 @REM this 'cdv' command soft modifies 'cd' command by doing this: (DONT USE FOLDER NAMES OR PATHS WITH SPACES!)
 
@@ -141,10 +141,14 @@ if "!command_options!"=="-h" (
 if exist "!toCheckPath!" ( 
 
 	if "!command_options!"=="-d" ( 
-	
-		set /p is_confirmed=type 'y' if you sure to delete the venv of this dir^? all auto venv configs and python libs inside the venv will be deleted. choose (y / n^)  || set is_confirmed=n
 		
-		if "!is_confirmed!"=="y" (
+		echo.
+		echo Type 'y' if you sure you want to delete the venv of this dir^? choose ^(y / n^)
+		echo [93m [96mNOTE: all auto venv configs and python libs inside the venv will be deleted. [0m 
+		echo --------------------------------------------------------------------------
+		set /p is_confirmed=  || set is_confirmed=n
+		
+		if /I "!is_confirmed!"=="y" (
 			echo.
 			echo "deleting (auto venv configs / cdv configs / all venv ) for this dir ..."
 			
@@ -176,6 +180,8 @@ if exist "!toCheckPath!" (
 		type nul > !toCheckPath!.is_autoVenv
 			@REM if it's a git repo add this file to ignored files
 		if exist "!toCheckPath!.git\" ( echo .is_autoVenv >> !toCheckPath!.gitignore )
+		@REM question: where is the rest of init logic? 
+		@REM answer: (.is_autoVenv) existense is checked later. IIf it's existing .bat will continue init logic (for new/already existing venvs)
 	)
 	
 	@REM leaving the backslash at end of path will make it harder to use '~' or get dir name using other methods. so remove it!
@@ -206,7 +212,32 @@ if exist "!toCheckPath!" (
 			echo.
 			
 			echo Creating new "!dir_name!" venv ...
-			call python -m venv C:\Users\%USERNAME%\py_envs\!venv_dir_name!\ 
+			echo.
+
+			echo Chooses a python version for this virtual environment. choose ^(1 / 2^)
+			echo 1^) [default] machine's global python
+			echo 2^) [custom] specify desired python executable ^path 
+			echo ----------------------------------------------------------
+			set /p python_setup_type= || set python_setup_type=1
+
+			echo.
+			 
+
+			if "!python_setup_type!"=="2" (
+				set /p py_path=Enter Python executable folder path ^(no spaces^) || goto exit_error
+
+				@REM replace all forward slashes with back slashes 
+				set "!py_path!=!py_path:/=\!"
+
+				@REM always make last char to be the backslash "\"
+				set "lastChar=!py_path:~-1!"
+				if not "!lastChar!"=="\" ( set "py_path=!py_path!\" )
+
+				call !py_path!python.exe -m venv C:\Users\%USERNAME%\py_envs\!venv_dir_name!\
+			) else ( 
+				@REM if input is 1 or any else than 2 choice just use the default (TODO: if enters other than 1 or 2 handle it!)
+				call python.exe -m venv C:\Users\%USERNAME%\py_envs\!venv_dir_name!\
+			)
 									
 			echo Done creating new venv ~activating ...
 		)
@@ -238,6 +269,7 @@ if exist "!toCheckPath!" (
 		exit /b 0
 	)	
 ) else (
+	:exit_error
 	echo Error: provided path does not exist.
 	echo Note: Use "cdv -h" for help on "cdv" command
 	ENDLOCAL
