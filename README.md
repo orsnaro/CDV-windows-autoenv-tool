@@ -5,16 +5,14 @@ This batch scripted tool will auto activate your python virtual environment just
 
 <br>
 
-> # New Release _V0.1.2_ ✨!
-### Install , open terminal and use it Rightaway!  [_Here to download v0.1.2_](https://github.com/orsnaro/windows-autoenv-tool/releases/tag/v0.1.2)
+> # New Release _V0.1.3_ ✨!
+### Install , open terminal and use it Rightaway!  [_Here to download v0.1.2_](https://github.com/orsnaro/windows-autoenv-tool/releases/tag/v0.1.3)
 <details>
 <summary> <h3>Release Notes:</h3> </summary>
     
-  -	**Feature:** NOW `cdv`  behaves more like normal cd default behavior when using `cdv` without ANY positional  args!  
-  - **Fix** bug with dir/s that include spaces.
-  - **Fix** bug when forward slashes are used instead of backslashes in dirs path 
-  - **Fix** bug using `cdv /` that persists even after fix general forward slash bug
-  - **Debug mode** can be easily activated now: 3rd shell positional argument must be set to `-1`
+  -	**Feature:** NOW `cdv` can  assign different python versions for each virtual environment easily just via using `cdv` !  
+  - **Fix** typeo error was leading to ignore the wrong files.
+  - **Enhance** prompts quality.
 
  </details> 
 
@@ -26,7 +24,7 @@ This batch scripted tool will auto activate your python virtual environment just
 
 > # How to Use🚀:
 
-* #### First Install latest version via [cdv.msi <sub>(latest)</sub> ](https://github.com/orsnaro/windows-autoenv-tool/releases/latest/download/cdv.msi)
+* #### First Install latest version via [cdv.msi <sub>(latest)</sub> ](https://github.com/orsnaro/windows-autoenv-tool/releases/latest/download/cdv_simple.msi)
 
 * #### if using [***cmder***](https://cmder.app/) console and you want to totally override `cd` by cdv _( you can re-tract the override any time )_
    ```batch
