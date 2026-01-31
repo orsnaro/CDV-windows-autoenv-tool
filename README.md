@@ -6,7 +6,7 @@ This batch scripted tool will auto activate your python virtual environment just
 <br>
 
 > # New Release _V0.1.3_ ✨!
-### Install , open terminal and use it Rightaway!  [_Here to download v0.1.2_](https://github.com/orsnaro/windows-autoenv-tool/releases/tag/v0.1.3)
+### Install , open terminal and use it Rightaway!  [_Here to download v0.1.3_](https://github.com/orsnaro/windows-autoenv-tool/releases/tag/v0.1.3)
 <details>
 <summary> <h3>Release Notes:</h3> </summary>
     
