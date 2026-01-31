@@ -11,7 +11,7 @@ This batch scripted tool will auto activate your python virtual environment just
 <summary> <h3>Release Notes:</h3> </summary>
     
   -	**Feature:** NOW `cdv` can  assign different python versions for each virtual environment easily just via using `cdv` !  
-  - **Fix** typeo error was leading to ignore the wrong files.
+  - **Fix** typoe error was leading to ignore the wrong files.
   - **Enhance** prompts quality.
 
  </details> 
