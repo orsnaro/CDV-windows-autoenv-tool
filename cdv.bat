@@ -4,7 +4,7 @@ SETLOCAL EnableDelayedExpansion ENABLEEXTENSIONS
 @REM ~ABOUT THE COMMAND~
 
 @REM version : V0.1.3
-@REM Date    : 31-1-2025
+@REM Date    : 31-1-2026
 @REM made by : orsnaro - Omar Rashad
 @REM system  : win11 - cmd 
 
