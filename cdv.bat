@@ -181,19 +181,23 @@ if exist "!toCheckPath!" (
 			@REM if it's a git repo add this file to ignored files
 		if exist "!toCheckPath!.git\" ( echo .is_autoVenv >> !toCheckPath!.gitignore )
 		@REM question: where is the rest of init logic? 
-		@REM answer: (.is_autoVenv) existense is checked later. IIf it's existing .bat will continue init logic (for new/already existing venvs)
+		@REM answer: (.is_autoVenv) existense is checked later. 
+		@REM If it's existing already! this.bat will continue init logic (for new/already existing venvs)
 	)
 	
-	@REM leaving the backslash at end of path will make it harder to use '~' or get dir name using other methods. so remove it!
+	@REM leaving the backslash at end of path will make 
+	@REM it harder to use '~' or get dir name using other methods. so remove it!
 	set toCheckPath=!toCheckPath:~0,-1!
 
 	for /d %%p in (!toCheckPath!) do (
 		set "dir_name=%%~np" 
-		@REM actually ~nx gets the name with extention in case of path was file not dir path.'~n' is an  extractor or slicing operator must work inside for loop
+		@REM actually ~nx gets the name with extention in case of path was file not dir path.'~n' 
+		@REM is an  extractor or slicing operator must work inside for loop
 	)
 	
 	if exist "!toCheckPath!\.is_autoVenv" (
-		@REM NOTE: <optional> append "_venv" to end of your proj folder name. This is optional step. This would be your venv folder name for this project or repo
+		@REM NOTE: <optional> append "_venv" to end of your proj folder name. This is optional step. 
+		@REM This would be your venv folder name for this project or repo
 		@REM choose any name pattern that will not be repeated or assign same proj folder name to proj venv name...
 
 		@REM REMOVE ANY WHITE SPACES FIRST!
@@ -207,7 +211,7 @@ if exist "!toCheckPath!" (
 		
 			echo.
 			echo [93m [93m=================================================================================[0m
-			echo [93m [96m NOTE: no python virtual environment found with name: "!venv_dir_name!". [0m
+			echo [93m [96m NOTE: No python virtual environment found with name: "!venv_dir_name!". [0m
 			echo [93m [93m=================================================================================[0m	
 			echo.
 			
@@ -239,19 +243,22 @@ if exist "!toCheckPath!" (
 				call python.exe -m venv C:\Users\%USERNAME%\py_envs\!venv_dir_name!\
 			)
 									
+			@REM save venv name inside '.is_autoVenv' file
+			echo !venv_dir_name! > !toCheckPath!\.is_autoVenv
+
 			echo Done creating new venv ~activating ...
 		)
 				
-		@REM save venv name inside '.is_autoVenv' file
-		echo !venv_dir_name! > !toCheckPath!\.is_autoVenv
 			
 		set final_venv_active_path=C:\Users\%USERNAME%\py_envs\!venv_dir_name!\Scripts\activate
 		
-		@REM all this variable will vanish after ENDLOCAL is called so save the path to a file instead to be able to use after ENDLOCAL
+		@REM all this variable will vanish after ENDLOCAL is called
+		@REM so save the path to a file instead to be able to use after ENDLOCAL
 		type nul > C:\Users\%USERNAME%\final_venv_active_path.txt
 		echo !final_venv_active_path! > C:\Users\%USERNAME%\final_venv_active_path.txt
 		
-		@REM end localisation before running activate.bat so delcared env var inside it remain global scoped
+		@REM end localisation before running activate.bat so delcared env var inside it(yes activate.bat has declared vars) 
+		@REM remain global scoped
 		ENDLOCAL 
 		
 		set /p final_venv_active_path=<  C:\Users\%USERNAME%\final_venv_active_path.txt
@@ -284,9 +291,9 @@ if defined final_venv_active_path (call %final_venv_active_path%)
 if exist "C:\Users\%USERNAME%\final_venv_active_path.txt" ( rm -f C:\Users\%USERNAME%\final_venv_active_path.txt )
 
 :normal_cd
-@REM finally cd to your project folder and exit :)!
+@REM finally cd to your project folder and exit :)! ENDLOCAL again in case!
 
-@REM ENDLOCAL
+ENDLOCAL
 set fstPoShellArg=%1
 if [%fstPoShellArg%] NEQ [] set fstPoShellArg=%fstPoShellArg:"=%
 if [%fstPoShellArg%]==[] (echo %CD%) else ( if not "%fstPoShellArg%"=="-1" ( if not "%fstPoShellArg%"=="-i" ( if not "%fstPoShellArg%"=="-d" (cd /d "%fstPoShellArg%") ) ) )
