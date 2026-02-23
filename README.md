@@ -89,6 +89,6 @@
 *  #### command auto ignores it's `.is_autoVenv` file in `.gitignore` if . _(this is only if the project/repo already has .gitignore file)_
 
 ---
- ##  _ would appreciate reading/trying/using the CDV tool  and raise any issues💙_
+ ##  _would appreciate reading/trying/using the CDV tool  and raise any issues💙_
 
 > ##  For more scripts that could be usefull visit: [bin](https://github.com/orsnaro/My-Configs-Cmder/tree/main/cmder/bin)
