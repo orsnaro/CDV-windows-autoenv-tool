@@ -1,18 +1,32 @@
-# windows-autoenv-tool
-> ##  for more scripts that could be usefull ! visit this [bin](https://github.com/orsnaro/My-Configs-Cmder/tree/main/cmder/bin)
+# ![alt text](./cdv.ico) The Windows Auto-venv Tool ![alt text](./cdv.ico)
 
-This batch scripted tool will auto activate your python virtual environment just by using `cdv`. Works like normal `cd`. for more help use `cdv -h`
+
+> This batch scripted tool will auto activates/deactivates/inits your python virtual environment just by using `CDV`!  Works like normal `CD`. for help use `cdv -h`
 
 <br>
 
-> # New Release _V0.1.3_ ✨!
-### Install , open terminal and use it Rightaway!  [_Here to download v0.1.3_](https://github.com/orsnaro/windows-autoenv-tool/releases/tag/v0.1.3)
+> # New Release _V0.1.4_ ✨!
+### Install , open terminal and use it! `CDV` Rightaway!  [_Here to download v0.1.4_](https://github.com/orsnaro/windows-autoenv-tool/releases/tag/v0.1.4)
 <details>
 <summary> <h3>Release Notes:</h3> </summary>
     
-  -	**Feature:** NOW `cdv` can  assign different python versions for each virtual environment easily just via using `cdv` !  
-  - **Fix** typoe error was leading to ignore the wrong files.
-  - **Enhance** prompts quality.
+  -	**Feature:** now the tool auto deactivates the venv if you go outside parent DIR!  
+  -	**Feature:** no need to `CDV` to parent project dir first to activate the venv anymore! `CDV` into any sub dirs in your repo/project and the venv will start rightaway!
+  -	**Feature:** now `CDV` can use paths with spaces just like `CD` though it's not recommended (`CDV` doesn't anymore crash from using paths with whitechars!)
+  - **Fix** paths/shell args with spaces/whitecharacters known bugs.
+  - **Fix** shell prompt redundent prints. and multiple uneeded `CD` calls. and uneeded extra venv deactivations/activations.
+  - **Fix** file encoding is not same as configured pagecode.
+  - **Fix** all known bugs caused by misusing of local scoping endlocal,setlocal and vanishing vars valuables.
+  - **Fix** almost all vars processes is gaurded with double quotes now.
+  - **Fix** critical hidden bug when using -D flag to delete auto-venv config and venv DIR due to scoping/ACLs issues
+  - **Quality** `%PROGRAMDATA%\CDV\Temp` dir to be used for any temp files instead of using `C:\Users\%USERNAME%\` dir.
+  - **Quality** help is enhanced: there is a separate help tag and `help.bat` if needed
+  - **Quality** better cleaning of temp vars.
+  - **Quality** made sure to use win batch native commands like `del` instead or `rm` etc...
+  - **Quality** now tool switches/shell args are case-insensetive which is more coherent with other shell tools approach
+  - **Quality** some internal commands is now turned silent /Q
+  - long awaited branch and commit 'd291ed5' is now ready , + refactoring and more ...
+  - **Full Changelog**: https://github.com/orsnaro/CDV-windows-autoenv-tool/compare/V0.1.3...V0.1.4
 
  </details> 
 
@@ -62,7 +76,7 @@ This batch scripted tool will auto activate your python virtual environment just
 
 * ##### to deactivate your venv .. you can also use `deactivate` command:
   ```batch
-  cdv <optional-path>  -1
+  cdv <optional-path>  -q
   ```
 
 
@@ -70,9 +84,11 @@ This batch scripted tool will auto activate your python virtual environment just
  * #### _(in testing)_ no need to download the [installer](https://github.com/orsnaro/windows-autoenv-tool/releases/latest) for every new version _( just reinstall and it will update to latest release )_
  * #### if `<optional-path>` parameter wasn't provided will just run `cdv` command on current directory
 * #### the folder which holds all venvs is defaulted to `C:\Users\%USERNAME%\py_envs`
-* #### virtual environment directoroy names will be same as project name with `_env` appended to it
-*  #### please dont delete `.is_autoVenv` file from your proj directory nor edit it _( unless you know what you are doing )_
-*  #### command auto ignores it's `.is_autoVenv` file in `.gitignore`. _(this is only if the project is in a git repository folder)_
+* #### virtual environment directoroy names will be same as project name with `_venv` appended to it
+*  #### please dont delete `.is_autoVenv` file from your proj/repo directory nor edit it _( unless you know what you are doing )_
+*  #### command auto ignores it's `.is_autoVenv` file in `.gitignore` if . _(this is only if the project/repo already has .gitignore file)_
 
 ---
- ##  _for more/config your custom auto venv I recommend reading the batch script itself and raise any issues💙_
+ ##  _ would appreciate reading/trying/using the CDV tool  and raise any issues💙_
+
+> ##  For more scripts that could be usefull visit: [bin](https://github.com/orsnaro/My-Configs-Cmder/tree/main/cmder/bin)
