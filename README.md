@@ -17,12 +17,12 @@
   - **Fix** shell prompt redundent prints. and multiple uneeded `CD` calls. and uneeded extra venv deactivations/activations.
   - **Fix** file encoding is not same as configured pagecode.
   - **Fix** all known bugs caused by misusing of local scoping endlocal,setlocal and vanishing vars valuables.
-  - **Fix** almost all vars processes is gaurded with double quotes now.
+  - **Fix** now almost all vars processes is gaurded with double quotes now.
   - **Fix** critical hidden bug when using -D flag to delete auto-venv config and venv DIR due to scoping/ACLs issues
-  - **Quality** `%PROGRAMDATA%\CDV\Temp` dir to be used for any temp files instead of using `C:\Users\%USERNAME%\` dir.
-  - **Quality** help is enhanced: there is a separate help tag and `help.bat` if needed
+  - **Quality** used `%PROGRAMDATA%\CDV\Temp` dir to be used for any temp files instead of using `C:\Users\%USERNAME%\` dir.
+  - **Quality** help is enhanced: there is a separate help label and `help.bat` if needed
   - **Quality** better cleaning of temp vars.
-  - **Quality** made sure to use win batch native commands like `del` instead or `rm` etc...
+  - **Quality** made sure to use win batch native commands like `del` instead of `rm` etc...
   - **Quality** now tool switches/shell args are case-insensetive which is more coherent with other shell tools approach
   - **Quality** some internal commands is now turned silent /Q
   - long awaited branch and commit 'd291ed5' is now ready , + refactoring and more ...
