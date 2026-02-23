@@ -327,7 +327,7 @@ set NEEDS_DEACTIVATION_THEN_DELETE=
 
 @REM finally cd to your project folder and exit :)!
 set "fstPoShellArg=%~1"
-if "%fstPoShellArg%"=="" (echo %CD%) else ( if /I not "%fstPoShellArg%"=="-q" ( if /I not "%fstPoShellArg%"=="-i" ( if /I not "%fstPoShellArg%"=="-d" (cd /d "%fstPoShellArg%") ) ) )
+if "%fstPoShellArg%"=="" (for /f "delims=" %%i in ("%CD%") do echo %%i) else ( if /I not "%fstPoShellArg%"=="-q" ( if /I not "%fstPoShellArg%"=="-i" ( if /I not "%fstPoShellArg%"=="-d" (cd /d "%fstPoShellArg%") ) ) )
 @REM cd works after ending localisation  so new dir in %CD% is in global scope not local
 
 :normal_exit
