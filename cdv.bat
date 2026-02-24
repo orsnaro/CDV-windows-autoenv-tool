@@ -111,9 +111,13 @@ if exist "!toCheckPath!" (
 			
 			set /p venv_name=< !toCheckPath!.is_autoVenv
 
-			echo Confirmed .. Deleting all auto-venv data for this folder... the auto-venv folder name: !venv_name!
-			
-			set "NEEDS_DEACTIVATION_THEN_DELETE=1"
+
+			if not "!venv_name!" == "" ( 
+				set "NEEDS_DEACTIVATION_THEN_DELETE=1" 
+			) else (
+				echo Failed! try going to the project DIR first then use "cdv -d"
+				goto exit_error
+			)
 
 
 			goto normal_cd
@@ -304,11 +308,15 @@ ENDLOCAL & (
 if "%NEEDS_DEACTIVATION_THEN_DELETE%"=="1" (
 	if defined CDV_VIRTUAL_ENV ( call %CDV_VIRTUAL_ENV%\Scripts\deactivate )
 
+
 	@REM delete auto-venv folder
-	if exist "C:\Users\%USERNAME%\py_envs\%venv_name%" ( rd /Q /S "C:\Users\%USERNAME%\py_envs\%venv_name%")
+	echo DEBUG: the to be deleted venv name : %venv_name%
+	echo Confirmed .. Deleting all auto-venv data for this folder... the auto-venv folder name: !venv_name!
+
+	if exist "C:\Users\%USERNAME%\py_envs\%venv_name%" ( attrib -r -s -h "C:\Users\%USERNAME%\py_envs\%venv_name%\*.*" /s /d && rd /Q /S "C:\Users\%USERNAME%\py_envs\%venv_name%")
 			
 	@REM delete .is_autoVenv file
-	if exist "%toCheckPath%.is_autoVenv" (del /Q /F "%toCheckPath%.is_autoVenv" && echo DONE Deleting )
+	if exist "%toCheckPath%.is_autoVenv" ( attrib -r -s -h "%toCheckPath%.is_autoVenv" && del /Q /F "%toCheckPath%.is_autoVenv" && echo DONE Deleting )
 )
 
 if "%NEEDS_DEACTIVATION%"=="1" (
