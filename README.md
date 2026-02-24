@@ -78,7 +78,12 @@
   ```batch
   cdv <optional-path>  -q
   ```
+> # Upcoming updates 🆙: 
 
+- TODO: Auto detect `pyproject.toml` or `requirements.txt` to  auto suggest creating a new venv instead of using `CDV -i` when creating new venv for  first time
+- TODO: Instead of linking project to its corresponding venv using the `.is_autoVenv` file content  or `_venv` suffix it'll use simple .yaml or sqlite map to determine which proj is for which venv
+- TODO: Refactor into labels
+- TODO: write a powershell version
 
 > # Notes📝:
  * #### _(in testing)_ no need to download the [installer](https://github.com/orsnaro/windows-autoenv-tool/releases/latest) for every new version _( just reinstall and it will update to latest release )_
