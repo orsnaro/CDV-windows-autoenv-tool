@@ -310,7 +310,6 @@ if "%NEEDS_DEACTIVATION_THEN_DELETE%"=="1" (
 
 
 	@REM delete auto-venv folder
-	echo DEBUG: the to be deleted venv name : %venv_name%
 	echo Confirmed .. Deleting all auto-venv data for this folder... the auto-venv folder name: !venv_name!
 
 	if exist "C:\Users\%USERNAME%\py_envs\%venv_name%" ( attrib -r -s -h "C:\Users\%USERNAME%\py_envs\%venv_name%\*.*" /s /d && rd /Q /S "C:\Users\%USERNAME%\py_envs\%venv_name%")
