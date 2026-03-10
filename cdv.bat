@@ -234,7 +234,9 @@ if exist "!toCheckPath!" (
 		for /L %%i IN (1, 1, 12) DO (
 
 			@REM loop stops eating from path when reach root or found a .is_autoVenv or traveresed enough levels 
-			if "!toCheckPath!"=="C:\" (goto loop_exit)
+			@REM this matches all drives letters
+			if /I "!toCheckPath!"=="!toCheckPath:~0,1!:\" goto loop_exit
+			
 
 			@REM remove trailing backslash except root backslash
 			if "!toCheckPath:~-1!"=="\" set "toCheckPath=!toCheckPath:~0,-1!"
