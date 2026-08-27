@@ -27,7 +27,7 @@
 
 > # How to Use🚀:
 
-* #### First Install latest version via [cdv.msi <sub>(latest)</sub> ](https://github.com/orsnaro/windows-autoenv-tool/releases/latest/download/cdv_simple.msi)
+* #### First Install latest version via [cdv.msi <sub>(latest)</sub> ](https://github.com/orsnaro/windows-autoenv-tool/releases/latest/download/cdv_simple.msi) or clone and set PATH: `git clone https://github.com/orsnaro/windows-autoenv-tool.git` and add its folder to your `PATH` env
 
 * #### if using [***cmder***](https://cmder.app/) console and you want to totally override `cd` by cdv _( you can re-tract the override any time )_
    ```batch
