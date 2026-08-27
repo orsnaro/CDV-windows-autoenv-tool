@@ -5,28 +5,17 @@
 
 <br>
 
-> # New Release _V0.1.4_ ✨!
-### Install , open terminal and use it! `CDV` Rightaway!  [_Here to download v0.1.4_](https://github.com/orsnaro/windows-autoenv-tool/releases/tag/V0.1.4)
+> # New Release _V0.1.5_ ✨!
+### Install , open terminal and use it! `CDV` Rightaway!  [_Here to download v0.1.5_](https://github.com/orsnaro/windows-autoenv-tool/releases/tag/V0.1.5)
 <details>
 <summary> <h3>Release Notes:</h3> </summary>
     
-  -	**Feature:** now the tool auto deactivates the venv if you go outside parent DIR!  
-  -	**Feature:** no need to `CDV` to parent project dir first to activate the venv anymore! `CDV` into any sub dirs in your repo/project and the venv will start rightaway!
-  -	**Feature:** now `CDV` can use paths with spaces just like `CD` though it's not recommended (`CDV` doesn't anymore crash from using paths with whitechars!)
-  - **Fix** paths/shell args with spaces/whitecharacters known bugs.
-  - **Fix** shell prompt redundent prints. and multiple uneeded `CD` calls. and uneeded extra venv deactivations/activations.
-  - **Fix** file encoding is not same as configured pagecode.
-  - **Fix** all known bugs caused by misusing of local scoping endlocal,setlocal and vanishing vars valuables.
-  - **Fix** now almost all vars processes is gaurded with double quotes now.
-  - **Fix** critical hidden bug when using -D flag to delete auto-venv config and venv DIR due to scoping/ACLs issues
-  - **Quality** used `%PROGRAMDATA%\CDV\Temp` dir to be used for any temp files instead of using `C:\Users\%USERNAME%\` dir.
-  - **Quality** help is enhanced: there is a separate help label and `help.bat` if needed
-  - **Quality** better cleaning of temp vars.
-  - **Quality** made sure to use win batch native commands like `del` instead of `rm` etc...
-  - **Quality** now tool switches/shell args are case-insensetive which is more coherent with other shell tools approach
-  - **Quality** some internal commands is now turned silent /Q
-  - long awaited branch and commit 'd291ed5' is now ready , + refactoring and more ...
-  - **Full Changelog**: https://github.com/orsnaro/CDV-windows-autoenv-tool/compare/V0.1.3...V0.1.4
+  - **Fix** parent venv discovery when `cdv` into subdir – replace `where` with `if exist` stdlib, fix `%%i` loop collision that broke parent climb (e.g., `repo_petrol_wells_web\frontend` now activates).
+  - **Fix** leading space in `final_venv_active_path` (`C:\Users\...\py_envs\`) causing `'C:\Users\OmarPc\py_envs\' is not recognized` screenshot error.
+  - **Fix** empty `.is_autoVenv` handling – guard empty venv name, avoid calling `C:\Users\...\py_envs\` when file is 0 bytes, gracefully `cd` without activation.
+  - **Fix** sync `cmder\bin\cdv.bat` (was stale `v0.1.4` broken copy).
+  - **Previous v0.1.4:** auto deactivation outside parent, subdir activation, spaces handling, encoding, scoping fixes, `-D` delete, `%PROGRAMDATA%\CDV\Temp`, help enhanced, `case-insensitive` switches.
+  - **Full Changelog**: https://github.com/orsnaro/CDV-windows-autoenv-tool/compare/V0.1.4...V0.1.5
 
  </details> 
 
