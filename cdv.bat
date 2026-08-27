@@ -267,7 +267,10 @@ if exist "!toCheckPath!" (
 			@REM trim whitespaces
 			set final_venv_dir_name=!final_venv_dir_name: =!
 
-			set "final_venv_active_path= C:\Users\%USERNAME%\py_envs\!final_venv_dir_name!\Scripts\Activate"
+			@REM ponytail: guard empty venv name, avoid calling C:\Users\...\py_envs\
+			if "!final_venv_dir_name!"=="" goto normal_cd
+
+			set "final_venv_active_path=C:\Users\%USERNAME%\py_envs\!final_venv_dir_name!\Scripts\activate"
 
 			@REM activate flag set logic
 			if not defined CDV_VIRTUAL_ENV (
