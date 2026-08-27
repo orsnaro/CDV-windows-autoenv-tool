@@ -241,14 +241,13 @@ if exist "!toCheckPath!" (
 			@REM remove trailing backslash except root backslash
 			if "!toCheckPath:~-1!"=="\" set "toCheckPath=!toCheckPath:~0,-1!"
 
-			where /Q "!toCheckPath!:!target_file!"
-			if !ERRORLEVEL! EQU 0 (
+			if exist "!toCheckPath!\!target_file!" (
 				set "found_is_autoVenv_file=1"
 				goto loop_exit
 			)
 
 			@REM eat one most inner dir (actually it removes one dir from the given path nice trick!) 
-			for %%i in ("!toCheckPath!\.") do set "toCheckPath=%%~dpi"
+			for %%a in ("!toCheckPath!\.") do set "toCheckPath=%%~dpa"
 		)	
 
 		:loop_exit
