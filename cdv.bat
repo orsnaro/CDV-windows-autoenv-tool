@@ -2,8 +2,8 @@
 
 @REM ~ABOUT THE COMMAND~
 
-@REM version : v0.1.4
-@REM Date    : 23-2-2026
+@REM version : v0.1.5
+@REM Date    : 27-8-2026
 @REM coder   : orsnaro - Omar Rashad
 @REM system  : win11 - cmd 
 
@@ -421,8 +421,8 @@ echo.
 echo [93m [93m==============================================================================[0m
 echo [93m =                    [96m      ~ABOUT THE "CDV" COMMAND~                         [93m= [0m
 echo [93m [93m==============================================================================[0m	
-echo [93m version : V0.1.4
-echo [93m Date    : 23-2-2026
+echo [93m version : V0.1.5
+echo [93m Date    : 27-8-2026
 echo [93m made by : orsnaro - Omar Rashad
 echo [93m system  : win11 - cmd 
 echo.
