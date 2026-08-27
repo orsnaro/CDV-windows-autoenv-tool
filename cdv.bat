@@ -262,11 +262,13 @@ if exist "!toCheckPath!" (
 			@REM else check if Current venv is the same as target found one if same do nothing 
 			@REM if not same  call activate.bat again
 
-			set /p final_venv_dir_name=< !toCheckPath!\.is_autoVenv
+			set "final_venv_dir_name="
+			set /p final_venv_dir_name=< "!toCheckPath!\.is_autoVenv"
 
 			@REM trim whitespaces
-			set final_venv_dir_name=!final_venv_dir_name: =!
-
+			if not defined final_venv_dir_name goto normal_cd
+			set "final_venv_dir_name=!final_venv_dir_name: =!"
+			if not defined final_venv_dir_name goto normal_cd
 			@REM ponytail: guard empty venv name, avoid calling C:\Users\...\py_envs\
 			if "!final_venv_dir_name!"=="" goto normal_cd
 
