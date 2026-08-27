@@ -241,14 +241,13 @@ if exist "!toCheckPath!" (
 			@REM remove trailing backslash except root backslash
 			if "!toCheckPath:~-1!"=="\" set "toCheckPath=!toCheckPath:~0,-1!"
 
-			where /Q "!toCheckPath!:!target_file!"
-			if !ERRORLEVEL! EQU 0 (
+			if exist "!toCheckPath!\!target_file!" (
 				set "found_is_autoVenv_file=1"
 				goto loop_exit
 			)
 
 			@REM eat one most inner dir (actually it removes one dir from the given path nice trick!) 
-			for %%i in ("!toCheckPath!\.") do set "toCheckPath=%%~dpi"
+			for %%a in ("!toCheckPath!\.") do set "toCheckPath=%%~dpa"
 		)	
 
 		:loop_exit
@@ -263,12 +262,17 @@ if exist "!toCheckPath!" (
 			@REM else check if Current venv is the same as target found one if same do nothing 
 			@REM if not same  call activate.bat again
 
-			set /p final_venv_dir_name=< !toCheckPath!\.is_autoVenv
+			set "final_venv_dir_name="
+			set /p final_venv_dir_name=< "!toCheckPath!\.is_autoVenv"
 
 			@REM trim whitespaces
-			set final_venv_dir_name=!final_venv_dir_name: =!
+			if not defined final_venv_dir_name goto normal_cd
+			set "final_venv_dir_name=!final_venv_dir_name: =!"
+			if not defined final_venv_dir_name goto normal_cd
+			@REM ponytail: guard empty venv name, avoid calling C:\Users\...\py_envs\
+			if "!final_venv_dir_name!"=="" goto normal_cd
 
-			set "final_venv_active_path= C:\Users\%USERNAME%\py_envs\!final_venv_dir_name!\Scripts\Activate"
+			set "final_venv_active_path=C:\Users\%USERNAME%\py_envs\!final_venv_dir_name!\Scripts\activate"
 
 			@REM activate flag set logic
 			if not defined CDV_VIRTUAL_ENV (
