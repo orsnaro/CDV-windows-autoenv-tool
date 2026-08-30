@@ -6,7 +6,7 @@
 <br>
 
 > # New Release _V0.1.5_ ✨!
-### Install , open terminal and use it! `CDV` Rightaway!  [_Here to download v0.1.5_](https://github.com/orsnaro/windows-autoenv-tool/releases/tag/V0.1.5)
+### Install , Open terminal, Use  `CDV` Rightaway!  [_Here to download v0.1.5_](https://github.com/orsnaro/windows-autoenv-tool/releases/tag/V0.1.5)
 <details>
 <summary> <h3>Release Notes:</h3> </summary>
     
